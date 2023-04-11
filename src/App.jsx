@@ -1,24 +1,14 @@
 import { useState } from "react";
 // import "./App.css";
 import styled from "styled-components";
-import FirstComponent from "./FirstComponent";
-import SecondComponent from "./SecondComponent";
+import FirstComponent from "./components/FirstComponent";
+import SecondComponent from "./components/SecondComponent";
 
 function App() {
-  const [showrating, setshowrating] = useState(false);
-  console.log(setshowrating);
-  const [rating, setrating] = useState(null);
   return (
     <Background>
-      {showrating ? (
-        <SecondComponent rating={rating} />
-      ) : (
-        <FirstComponent
-          rating={rating}
-          setrating={setrating}
-          setshowrating={setshowrating}
-        />
-      )}
+      <FirstComponent></FirstComponent>
+      <SecondComponent></SecondComponent>
     </Background>
   );
 }

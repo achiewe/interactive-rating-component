@@ -2,22 +2,11 @@ import { useState } from "react";
 import styled from "styled-components";
 // import "./app.css";
 
-function FirstComponent({ rating, setrating, setshowrating }) {
-  const [activeRatings, setActiveRatings] = useState({
-    oneStar: false,
-    TwoStar: false,
-    ThreeStar: false,
-    FourStar: false,
-    FiveStar: false,
-  });
-
-  function handleSubmit() {
-    setshowrating(true);
-  }
+function FirstComponent({}) {
   return (
     <Main>
       <Star>
-        <img src="resources/images/icon-star.svg" alt="star icon" />
+        <img src="public/icon-star.svg" alt="star icon" />
       </Star>
       <TextContainer>
         <h1>How did we do?</h1>
@@ -29,86 +18,31 @@ function FirstComponent({ rating, setrating, setshowrating }) {
 
       <BottomMain>
         <RatingMainDiv>
-          <RatingButton
-            // className={activeratings.onestar ? "active" : ""}
-            onClick={() => {
-              setActiveRatings({
-                oneStar: true,
-                TwoStar: false,
-                ThreeStar: false,
-                FourStan: false,
-                FiveStar: false,
-              });
-              setrating(1);
-            }}
-          >
+          <RatingButton>
             <NumberP> 1 </NumberP>
           </RatingButton>
 
-          <RatingButton
-            onClick={() => {
-              setActiveRatings({
-                oneStar: false,
-                TwoStar: true,
-                ThreeStar: false,
-                FourStar: false,
-                FiveStar: false,
-              });
-              setrating(2);
-            }}
-          >
+          <RatingButton>
             <NumberP> 2 </NumberP>
           </RatingButton>
 
-          <RatingButton
-            // className={activeratings.ThreeStar ? "active" : ""}
-            onClick={() => {
-              setActiveRatings({
-                oneStar: false,
-                TwoStar: false,
-                ThreeStar: true,
-                FourStar: false,
-                FiveStar: false,
-              });
-              setrating(3);
-            }}
-          >
+          <RatingButton>
             <NumberP> 3 </NumberP>
           </RatingButton>
 
           <RatingButton
-            // className={activeratings.FourStar ? "active" : ""}
-            onClick={() => {
-              setActiveRatings({
-                oneStar: false,
-                TwoStar: false,
-                ThreeStar: false,
-                FourStar: true,
-                FiveStar: false,
-              });
-              setrating(4);
-            }}
+          // className={activeratings.FourStar ? "active" : ""}
           >
             <NumberP> 4 </NumberP>
           </RatingButton>
 
           <RatingButton
-            // className={activeratings.FiveStar ? "active" : ""}
-            onClick={() => {
-              setActiveRatings({
-                oneStar: false,
-                TwoStar: false,
-                ThreeStar: false,
-                FourStar: false,
-                FiveStar: true,
-              });
-              setrating(5);
-            }}
+          // className={activeratings.FiveStar ? "active" : ""}
           >
             <NumberP> 5 </NumberP>
           </RatingButton>
         </RatingMainDiv>
-        <SumbitButton onClick={handleSubmit}> SUBMIT </SumbitButton>
+        <SumbitButton> SUBMIT </SumbitButton>
       </BottomMain>
     </Main>
   );
