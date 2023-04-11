@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 // import "./app.css";
 
-function ParentComponent({ rating, setrating, setshowrating }) {
+function FirstComponent({ rating, setrating, setshowrating }) {
   const [activeRatings, setActiveRatings] = useState({
     oneStar: false,
     TwoStar: false,
@@ -25,8 +25,11 @@ function ParentComponent({ rating, setrating, setshowrating }) {
           Please let us know how we did with your support request. All feedback
           is appreciated to help us improve our offering!
         </p>
-        <div>
-          <NumberP
+      </TextContainer>
+
+      <BottomMain>
+        <RatingMainDiv>
+          <RatingButton
             // className={activeratings.onestar ? "active" : ""}
             onClick={() => {
               setActiveRatings({
@@ -39,10 +42,10 @@ function ParentComponent({ rating, setrating, setshowrating }) {
               setrating(1);
             }}
           >
-            1
-          </NumberP>
-          <NumberP
-            // className={activeratings.TwoStar ? "active" : ""}
+            <NumberP> 1 </NumberP>
+          </RatingButton>
+
+          <RatingButton
             onClick={() => {
               setActiveRatings({
                 oneStar: false,
@@ -54,9 +57,10 @@ function ParentComponent({ rating, setrating, setshowrating }) {
               setrating(2);
             }}
           >
-            2
-          </NumberP>
-          <NumberP
+            <NumberP> 2 </NumberP>
+          </RatingButton>
+
+          <RatingButton
             // className={activeratings.ThreeStar ? "active" : ""}
             onClick={() => {
               setActiveRatings({
@@ -69,9 +73,10 @@ function ParentComponent({ rating, setrating, setshowrating }) {
               setrating(3);
             }}
           >
-            3
-          </NumberP>
-          <NumberP
+            <NumberP> 3 </NumberP>
+          </RatingButton>
+
+          <RatingButton
             // className={activeratings.FourStar ? "active" : ""}
             onClick={() => {
               setActiveRatings({
@@ -84,9 +89,10 @@ function ParentComponent({ rating, setrating, setshowrating }) {
               setrating(4);
             }}
           >
-            4
-          </NumberP>
-          <NumberP
+            <NumberP> 4 </NumberP>
+          </RatingButton>
+
+          <RatingButton
             // className={activeratings.FiveStar ? "active" : ""}
             onClick={() => {
               setActiveRatings({
@@ -99,25 +105,24 @@ function ParentComponent({ rating, setrating, setshowrating }) {
               setrating(5);
             }}
           >
-            5
-          </NumberP>
-        </div>
-        <button onClick={handleSubmit}>Submit</button>
-      </TextContainer>
+            <NumberP> 5 </NumberP>
+          </RatingButton>
+        </RatingMainDiv>
+        <SumbitButton onClick={handleSubmit}> SUBMIT </SumbitButton>
+      </BottomMain>
     </Main>
   );
 }
 
 const Main = styled.div`
   width: 100%;
-  height: 360px;
   background: radial-gradient(
     98.96% 98.96% at 50% 0%,
     #232a34 0%,
     #181e27 100%
   );
   border-radius: 30px;
-  padding: 24px;
+  padding: 24px 24px 32px 24px;
   box-sizing: border-box;
   max-width: 327px;
 `;
@@ -138,6 +143,7 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 24px;
   h1 {
     font-size: 24px;
     font-weight: 700;
@@ -156,10 +162,70 @@ const TextContainer = styled.div`
   }
 `;
 
-const NumberP = styled.p`
+const RatingMainDiv = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+`;
+
+const RatingButton = styled.button`
+  width: 42px;
+  height: 42px;
+  background-color: #262e38;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  :hover {
+    background-color: #fc7614;
+    color: white;
+  }
+
   :focus {
-    color: red;
+    background-color: #7c8798;
+    color: white;
   }
 `;
 
-export default ParentComponent;
+const NumberP = styled.p`
+  color: #7c8798;
+  font-family: "Overpass", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.17499999701976776px;
+  text-align: center;
+`;
+
+const SumbitButton = styled.button`
+  width: 100%;
+  height: 45px;
+  background-color: #fc7614;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 22.5px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 1.8666666746139526px;
+  text-align: left;
+  color: #ffffff;
+  :hover {
+    background-color: #ffffff;
+    color: #fc7614;
+  }
+`;
+
+const BottomMain = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
+
+export default FirstComponent;

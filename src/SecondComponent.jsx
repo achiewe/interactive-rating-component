@@ -1,7 +1,7 @@
 import styled from "styled-components";
 // import "./App.css";
 
-function ChildComponent({ rating }) {
+function SecondComponent({ rating }) {
   return (
     <div>
       <p> {rating} </p>
@@ -9,4 +9,4 @@ function ChildComponent({ rating }) {
   );
 }
 
-export default ChildComponent;
+export default SecondComponent;

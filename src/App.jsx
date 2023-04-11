@@ -1,8 +1,8 @@
 import { useState } from "react";
 // import "./App.css";
 import styled from "styled-components";
-import ParentComponent from "./ParentComponent";
-import ChildComponent from "./ChildComponent";
+import FirstComponent from "./FirstComponent";
+import SecondComponent from "./SecondComponent";
 
 function App() {
   const [showrating, setshowrating] = useState(false);
@@ -11,9 +11,9 @@ function App() {
   return (
     <Background>
       {showrating ? (
-        <ChildComponent rating={rating} />
+        <SecondComponent rating={rating} />
       ) : (
-        <ParentComponent
+        <FirstComponent
           rating={rating}
           setrating={setrating}
           setshowrating={setshowrating}
