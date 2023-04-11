@@ -1,12 +1,13 @@
 import { useState } from "react";
 import styled from "styled-components";
+import imageStar from "/public/icon-star.svg";
 // import "./app.css";
 
 function FirstComponent({}) {
   return (
     <Main>
       <Star>
-        <img src="public/icon-star.svg" alt="star icon" />
+        <img src={imageStar} alt="star icon" />
       </Star>
       <TextContainer>
         <h1>How did we do?</h1>
