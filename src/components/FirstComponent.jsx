@@ -75,6 +75,11 @@ const Star = styled.div`
   align-items: center;
   border-radius: 50%;
   margin-bottom: 20px;
+  @media (min-width: 1024px) {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 30px;
+  }
 `;
 
 const TextContainer = styled.div`
@@ -90,6 +95,10 @@ const TextContainer = styled.div`
     letter-spacing: 0px;
     text-align: left;
     color: #ffffff;
+    @media (min-width: 1024px) {
+      font-size: 28px;
+      line-height: 35.45px;
+    }
   }
   p {
     font-size: 14px;
@@ -98,6 +107,10 @@ const TextContainer = styled.div`
     letter-spacing: 0px;
     text-align: left;
     color: #969fad;
+    @media (min-width: 1024px) {
+      font-size: 15px;
+      line-height: 24px;
+    }
   }
 `;
 
@@ -106,6 +119,9 @@ const RatingMainDiv = styled.div`
   display: flex;
   flex-direction: row;
   gap: 18px;
+  @media (min-width: 1024px) {
+    gap: 21px;
+  }
 `;
 
 const RatingButton = styled.button`
@@ -127,6 +143,10 @@ const RatingButton = styled.button`
     background-color: #7c8798;
     color: white;
   }
+  @media (min-width: 1024px) {
+    width: 51px;
+    height: 51px;
+  }
 `;
 
 const NumberP = styled.p`
@@ -137,6 +157,9 @@ const NumberP = styled.p`
   line-height: 24px;
   letter-spacing: 0.17499999701976776px;
   text-align: center;
+  @media (min-width: 1024px) {
+    font-size: 16px;
+  }
 `;
 
 const SumbitButton = styled.button`
@@ -165,6 +188,9 @@ const BottomMain = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+  @media (min-width: 1024px) {
+    gap: 32px;
+  }
 `;
 
 export default FirstComponent;

@@ -5,7 +5,7 @@ import FirstComponent from "./components/FirstComponent";
 import SecondComponent from "./components/SecondComponent";
 
 function App() {
-  const [showrating, setshowrating] = useState(false);
+  const [showrating, setshowrating] = useState(true);
   return (
     <Background>
       {showrating ? <SecondComponent /> : <FirstComponent />}

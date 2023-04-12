@@ -35,6 +35,10 @@ const Main = styled.div`
   padding: 34px 24px 37px 24px;
   box-sizing: border-box;
   max-width: 327px;
+  @media (min-width: 1024px) {
+    max-width: 412px;
+    padding: 45px 40px 45px 32px;
+  }
 `;
 
 const TopDiv = styled.div`
@@ -44,6 +48,9 @@ const TopDiv = styled.div`
   flex-direction: column;
   gap: 24px;
   margin-bottom: 17px;
+  @media (min-width: 1024px) {
+    gap: 32px;
+  }
 `;
 
 const ResultDiv = styled.div`
@@ -54,6 +61,9 @@ const ResultDiv = styled.div`
   align-items: center;
   background-color: #262e38;
   border-radius: 22.5px;
+  @media (min-width: 1024px) {
+    width: 193px;
+  }
 `;
 
 const ResultP = styled.p`
@@ -63,6 +73,10 @@ const ResultP = styled.p`
   letter-spacing: 0px;
   text-align: center;
   color: #fc7614;
+  @media (min-width: 1024px) {
+    font-size: 15px;
+    line-height: 24px;
+  }
 `;
 
 const WordThank = styled.h2`
@@ -72,6 +86,10 @@ const WordThank = styled.h2`
   letter-spacing: 0px;
   text-align: center;
   color: #ffffff;
+  @media (min-width: 1024px) {
+    font-size: 28px;
+    line-height: 35.45px;
+  }
 `;
 
 const BottomP = styled.p`
@@ -81,6 +99,10 @@ const BottomP = styled.p`
   letter-spacing: 0px;
   text-align: center;
   color: #969fad;
+  @media (min-width: 1024px) {
+    font-size: 15px;
+    line-height: 24px;
+  }
 `;
 
 export default SecondComponent;
