@@ -5,10 +5,19 @@ import FirstComponent from "./components/FirstComponent";
 import SecondComponent from "./components/SecondComponent";
 
 function App() {
-  const [showrating, setshowrating] = useState(true);
+  const [showrating, setshowrating] = useState(false);
+  const [indicator, setindicator] = useState("");
   return (
     <Background>
-      {showrating ? <SecondComponent /> : <FirstComponent />}
+      {showrating ? (
+        <SecondComponent indicator={indicator} />
+      ) : (
+        <FirstComponent
+          setshowrating={setshowrating}
+          indicator={indicator}
+          setindicator={setindicator}
+        />
+      )}
     </Background>
   );
 }

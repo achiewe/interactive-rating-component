@@ -3,7 +3,12 @@ import styled from "styled-components";
 import imageStar from "/public/icon-star.svg";
 // import "./app.css";
 
-function FirstComponent({}) {
+function FirstComponent({ indicator, setindicator, setshowrating }) {
+  const handleClick = () => {
+    if (indicator !== "") {
+      setshowrating(true);
+    }
+  };
   return (
     <Main>
       <Star>
@@ -19,31 +24,47 @@ function FirstComponent({}) {
 
       <BottomMain>
         <RatingMainDiv>
-          <RatingButton>
-            <NumberP> 1 </NumberP>
-          </RatingButton>
-
-          <RatingButton>
-            <NumberP> 2 </NumberP>
-          </RatingButton>
-
-          <RatingButton>
-            <NumberP> 3 </NumberP>
+          <RatingButton
+            onClick={() => {
+              setindicator("1");
+            }}
+          >
+            <p> 1 </p>
           </RatingButton>
 
           <RatingButton
-          // className={activeratings.FourStar ? "active" : ""}
+            onClick={() => {
+              setindicator("2");
+            }}
           >
-            <NumberP> 4 </NumberP>
+            <p> 2 </p>
           </RatingButton>
 
           <RatingButton
-          // className={activeratings.FiveStar ? "active" : ""}
+            onClick={() => {
+              setindicator("3");
+            }}
           >
-            <NumberP> 5 </NumberP>
+            <p> 3 </p>
+          </RatingButton>
+
+          <RatingButton
+            onClick={() => {
+              setindicator("4");
+            }}
+          >
+            <p> 4 </p>
+          </RatingButton>
+
+          <RatingButton
+            onClick={() => {
+              setindicator("5");
+            }}
+          >
+            <p> 5 </p>
           </RatingButton>
         </RatingMainDiv>
-        <SumbitButton> SUBMIT </SumbitButton>
+        <SumbitButton onClick={handleClick}> SUBMIT </SumbitButton>
       </BottomMain>
     </Main>
   );
@@ -133,32 +154,33 @@ const RatingButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #7c8798;
   cursor: pointer;
-  :hover {
-    background-color: #fc7614;
-    color: white;
+  p {
+    font-family: "Overpass", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.17499999701976776px;
+    text-align: center;
+    @media (min-width: 1024px) {
+      font-size: 16px;
+    }
   }
 
   :focus {
     background-color: #7c8798;
     color: white;
   }
+
+  :hover {
+    background-color: #fc7614;
+    color: white;
+  }
+
   @media (min-width: 1024px) {
     width: 51px;
     height: 51px;
-  }
-`;
-
-const NumberP = styled.p`
-  color: #7c8798;
-  font-family: "Overpass", sans-serif;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 24px;
-  letter-spacing: 0.17499999701976776px;
-  text-align: center;
-  @media (min-width: 1024px) {
-    font-size: 16px;
   }
 `;
 

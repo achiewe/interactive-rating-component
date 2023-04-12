@@ -2,19 +2,19 @@ import styled from "styled-components";
 import { useState } from "react";
 import imageThanks from "/public/illustration-thank-you.svg";
 
-function SecondComponent() {
+function SecondComponent({ indicator }) {
   return (
     <Main>
       <TopDiv>
         <img src={imageThanks} alt="image thanks" />
         <ResultDiv>
-          <ResultP> You selected out of 5</ResultP>
+          <ResultP> You selected out {indicator} of 5</ResultP>
         </ResultDiv>
         <WordThank> Thank you!</WordThank>
       </TopDiv>
       <BottomP>
         We appreciate you taking the time to give a rating. If you ever need
-        more support, don’t hesitate to get in touch!{" "}
+        more support, don’t hesitate to get in touch!
       </BottomP>
     </Main>
   );
