@@ -5,10 +5,10 @@ import FirstComponent from "./components/FirstComponent";
 import SecondComponent from "./components/SecondComponent";
 
 function App() {
+  const [showrating, setshowrating] = useState(false);
   return (
     <Background>
-      <FirstComponent></FirstComponent>
-      <SecondComponent></SecondComponent>
+      {showrating ? <SecondComponent /> : <FirstComponent />}
     </Background>
   );
 }

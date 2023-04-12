@@ -60,6 +60,10 @@ const Main = styled.div`
   padding: 24px 24px 32px 24px;
   box-sizing: border-box;
   max-width: 327px;
+  @media (min-width: 1024px) {
+    max-width: 412px;
+    padding: 32px 39px 32px 32px;
+  }
 `;
 
 const Star = styled.div`
